@@ -22,6 +22,7 @@ makedocs(;
     format=Documenter.HTML(;
         canonical="https://knottyanyon.github.io/DocumenterProofound.jl",
         edit_link="main",
+        mathengine=DocumenterProofound.mathengine(),
         assets=joinpath.("assets/proofound", DocumenterProofound.assets()),
     ),
     pages=["Home" => "index.md", "Kitchen Sink" => "kitchen_sink.md"],

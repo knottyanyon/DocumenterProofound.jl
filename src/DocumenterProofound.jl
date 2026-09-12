@@ -1,8 +1,9 @@
 module DocumenterProofound
 
+using Documenter
 using DocumenterGlossip
 
-export assets, setup
+export assets, setup, mathengine
 
 include("page_meta.jl")
 include("flowdiagram.jl")
@@ -26,6 +27,26 @@ function assets()
         "math-env.js",
         "tn-repr.js",
     ]
+end
+
+"""
+    mathengine() -> Documenter.MathJax3
+
+MathJax3 config the theme's math environments need: the `physics` LaTeX package (for
+macros like `\\ket`) and `\\( \\)` as an inline-math delimiter alongside `\$ \$`. Pass as
+`Documenter.HTML(mathengine = DocumenterProofound.mathengine(), ...)`.
+"""
+function mathengine()
+    return Documenter.MathJax3(
+        Dict(
+            :loader => Dict("load" => ["[tex]/physics"]),
+            :tex => Dict(
+                "inlineMath" => [["\$", "\$"], ["\\(", "\\)"]],
+                "tags" => "ams",
+                "packages" => ["base", "ams", "autoload", "physics"],
+            ),
+        ),
+    )
 end
 
 """
