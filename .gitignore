@@ -1,6 +1,7 @@
 # Julia
 Manifest.toml
 docs/build/
+docs/src/assets/proofound/
 /deps/deps.jl
 
 # macOS
