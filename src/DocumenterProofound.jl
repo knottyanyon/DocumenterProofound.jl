@@ -32,7 +32,7 @@ end
     setup(src_dir::String; glossary_path="/references/glossary/")
 
 Call once from a package's `docs/make.jl` before `makedocs`: runs the page-info and
-flow-diagram markdown preprocessors over `src_dir`, plus [`DocumenterGlossip.setup_glossary`](@ref).
+flow-diagram markdown preprocessors over `src_dir`, plus `DocumenterGlossip.setup_glossary`.
 """
 function setup(src_dir::String; glossary_path::String="/references/glossary/")
     DocumenterGlossip.setup_glossary(src_dir; glossary_path=glossary_path)
