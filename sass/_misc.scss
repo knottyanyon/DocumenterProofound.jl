@@ -1,0 +1,27 @@
+/* Custom admonition: algorithm box (dark grey) */
+.admonition.is-category-algorithm {
+    border-color: #555;
+}
+
+.admonition.is-category-algorithm>.admonition-header {
+    background-color: #555;
+    color: #fff;
+    font-family: monospace;
+}
+
+.admonition.is-category-algorithm>.admonition-body {
+    background-color: #f8f8f8;
+    color: #1a1a2e;
+}
+
+
+/* Tensor network diagrams — dark mode adjustment
+   SVGs are exported with transparent background and #1e1e1e strokes (light mode).
+   In dark mode, invert(0.85) lightens the strokes without fully inverting blob colors.
+   Place this file at docs/src/assets/custom.css and reference it in makedocs():
+       format = Documenter.HTML(assets = ["assets/custom.css"])
+*/
+
+.theme-dark img[src*="assets/diagrams"] {
+    filter: invert(0.85);
+}

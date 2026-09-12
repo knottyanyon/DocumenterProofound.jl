@@ -1,0 +1,70 @@
+/* ================================================================
+   Right-side on-page TOC
+   Documenter's layout: .docs-main has max-width:52rem and
+   margin-left:20rem (position:fixed sidebar), so on wide screens
+   the viewport area to the right of docs-main is blank.  The TOC is
+   position:fixed into that blank zone — .docs-main is never touched,
+   so text width is completely unchanged.
+   page-toc.js injects <aside id="qr-page-toc"> into <body> and
+   wires scroll-spy.
+   ================================================================ */
+
+/* Hidden by default; show only when there is ≥ 180px of space to the
+   right of docs-main (viewport ≥ 73rem + 180px ≈ 1348px). */
+#qr-page-toc { display: none; }
+
+@media (min-width: calc(73rem + 180px)) {
+    #qr-page-toc {
+        display: block;
+        position: fixed;
+        top: 4.5rem;
+        left: calc(20rem + 52rem + 1.5rem);   /* sidebar + content + gap */
+        width: unquote("min(220px, calc(100vw - 73rem - 2rem))");
+        max-height: calc(100vh - 5.5rem);
+        overflow-y: auto;
+        border-left: 2px solid #e1e1e6;
+        padding: 1rem 0.5rem 2rem 1rem;
+        z-index: 4;
+    }
+}
+
+html.theme--documenter-dark #qr-page-toc { border-left-color: #34353d; }
+
+.qr-toc-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #9a9aa5;
+    margin: 0 0 0.6rem 0;
+}
+
+.qr-toc-list { list-style: none; margin: 0; padding: 0; }
+.qr-toc-list li { margin: 0; padding: 0; }
+
+.qr-toc-list a {
+    display: block;
+    padding: 0.2rem 0.25rem;
+    color: #4b4b55;
+    text-decoration: none;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    border-radius: 3px;
+    transition: color 120ms;
+}
+
+.qr-toc-list a:hover { color: #4063d8; }
+.qr-toc-list li.is-active > a { color: #4063d8; font-weight: 600; }
+
+/* h3 items are indented and slightly smaller */
+.qr-toc-h3 > a { padding-left: 0.85rem; font-size: 0.8125rem; color: #6c757d; }
+.qr-toc-h3 > a:hover,
+.qr-toc-h3.is-active > a { color: #4063d8; }
+
+/* Dark mode TOC */
+html.theme--documenter-dark .qr-toc-list a { color: #c2c2cc; }
+html.theme--documenter-dark .qr-toc-list a:hover { color: #6d90ff; }
+html.theme--documenter-dark .qr-toc-list li.is-active > a { color: #6d90ff; font-weight: 600; }
+html.theme--documenter-dark .qr-toc-h3 > a { color: #9a9aa5; }
+html.theme--documenter-dark .qr-toc-h3 > a:hover,
+html.theme--documenter-dark .qr-toc-h3.is-active > a { color: #6d90ff; }

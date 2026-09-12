@@ -1,0 +1,82 @@
+/* Custom admonition: theorem box (Julia logo red) */
+.admonition.is-category-theorem {
+    border-color: #CB3C33;
+}
+
+.admonition.is-category-theorem>.admonition-header {
+    background-color: #CB3C33;
+    color: #fff;
+}
+
+.admonition.is-category-theorem>.admonition-body {
+    background-color: #fdf0ef;
+    color: #1a1a2e;
+}
+
+/* Custom admonition: definition box (Julia logo blue) */
+.admonition.is-category-definition {
+    border-color: #4063D8;
+}
+
+.admonition.is-category-definition>.admonition-header {
+    background-color: #4063D8;
+    color: #fff;
+}
+
+.admonition.is-category-definition>.admonition-body {
+    background-color: #eef1fd;
+    color: #1a1a2e;
+}
+
+/* Custom admonition: question/exercise box (Julia logo purple) */
+/* subquestion: same colour family, no header, for parts a/b/c */
+.admonition.is-category-subquestion {
+    border-color: #9558B2;
+}
+
+.admonition.is-category-subquestion>.admonition-header {
+    display: none;
+}
+
+.admonition.is-category-subquestion>.admonition-body {
+    background-color: #f7f0fb;
+    color: #1a1a2e;
+}
+
+
+.admonition.is-category-question {
+    border-color: #9558B2;
+}
+
+.admonition.is-category-question>.admonition-header {
+    background-color: #9558B2;
+    color: #fff;
+}
+
+.admonition.is-category-question>.admonition-body {
+    background-color: #f7f0fb;
+    color: #1a1a2e;
+}
+
+/* Custom admonition: design note box (amber). Used for editorial asides on why a type or
+   function was shaped the way it was, distinct from a "note" (a fact about current behaviour)
+   or a "tip" (a usage suggestion). Body text is italicised to read as commentary. */
+.admonition.is-category-design-note {
+    border-color: #C9A227;
+}
+
+.admonition.is-category-design-note>.admonition-header {
+    background-color: #C9A227;
+    color: #1a1a2e;
+}
+
+.admonition.is-category-design-note>.admonition-body {
+    background-color: #fbf6e6;
+    color: #1a1a2e;
+    font-style: italic;
+}
+
+/* Prevent Bulma from shrinking SVG diagrams inside table cells */
+.content table td img {
+    max-width: none;
+}

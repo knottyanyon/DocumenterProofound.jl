@@ -1,0 +1,6 @@
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+DocumenterProofound = "4c694f12-a91f-464a-9e7e-b63c4e97dd98"
+
+[sources]
+DocumenterProofound = {path = ".."}

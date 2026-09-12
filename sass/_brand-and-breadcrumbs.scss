@@ -1,0 +1,93 @@
+/* ================================================================
+   Brand color corrections  (design system A + B)
+   A1: link/info blue #3c5dcd → #4063d8  (Documenter default → Julia exact)
+   A2: success green  #259a12 → #389826
+   A5–A8: dark-mode tints for red/green/blue/purple
+   B1/B2: todo admonition → teal so compat and todo are visually distinct
+   Applied as plain CSS overrides (no SCSS recompile needed).
+   ================================================================ */
+
+/* Content links ― light mode */
+.content a { color: #4063d8; }
+.content a:hover { color: #092ca1; }
+
+/* Content links ― dark mode */
+html.theme--documenter-dark .content a { color: #6d90ff; }
+html.theme--documenter-dark .content a:hover { color: #a9bcff; }
+
+/* ── Section headings — Qritical purple ─────────────────────────
+   Heading text lives inside <a class="docs-heading-anchor">; the
+   color: inherit rule prevents the global .content a blue from
+   winning over the heading colour we set here.
+   The permalink ¶ anchor (.docs-heading-anchor-permalink) is left
+   at the link colour since it functions as a navigation link.
+   ─────────────────────────────────────────────────────────────── */
+.content h1, .content h2, .content h3,
+.content h4, .content h5, .content h6 {
+    color: #6a3a8a;
+}
+
+.content :is(h1, h2, h3, h4, h5, h6) a.docs-heading-anchor {
+    color: inherit;
+}
+
+html.theme--documenter-dark .content h1,
+html.theme--documenter-dark .content h2,
+html.theme--documenter-dark .content h3,
+html.theme--documenter-dark .content h4,
+html.theme--documenter-dark .content h5,
+html.theme--documenter-dark .content h6 {
+    color: #c080e0;
+}
+
+html.theme--documenter-dark .content :is(h1, h2, h3, h4, h5, h6) a.docs-heading-anchor {
+    color: inherit;
+}
+
+/* Info admonition (maps to $blue) */
+.admonition.is-category-info { border-color: #4063d8; }
+.admonition.is-category-info > .admonition-header { background-color: #4063d8; color: #fff; }
+.admonition.is-category-info > .admonition-body { background-color: #eef2fd; }
+
+html.theme--documenter-dark .admonition.is-category-info { border-color: #6d90ff; }
+html.theme--documenter-dark .admonition.is-category-info > .admonition-header {
+    background-color: #1c2740; color: #6d90ff;
+}
+
+/* Success admonition (maps to $green) */
+.admonition.is-category-success { border-color: #389826; }
+.admonition.is-category-success > .admonition-header { background-color: #389826; color: #fff; }
+.admonition.is-category-success > .admonition-body { background-color: #eaf7e8; }
+
+html.theme--documenter-dark .admonition.is-category-success { border-color: #65c553; }
+html.theme--documenter-dark .admonition.is-category-success > .admonition-header {
+    background-color: #1b2c1a; color: #65c553;
+}
+
+/* Todo admonition → teal (#1aa6a0 light, #5cc9c4 dark) */
+.admonition.is-category-todo { border-color: #1aa6a0; }
+.admonition.is-category-todo > .admonition-header { background-color: #1aa6a0; color: #fff; }
+.admonition.is-category-todo > .admonition-body { background-color: #e4f7f6; color: #1a1a2e; }
+
+html.theme--documenter-dark .admonition.is-category-todo { border-color: #5cc9c4; }
+html.theme--documenter-dark .admonition.is-category-todo > .admonition-header {
+    background-color: #0f2a28; color: #5cc9c4;
+}
+html.theme--documenter-dark .admonition.is-category-todo > .admonition-body {
+    background-color: #0a1f1e;
+}
+
+/* ================================================================
+   Breadcrumbs
+   page-toc.js removes .is-disabled and sets href on parent crumbs
+   that have a corresponding sidebar index page; this CSS handles
+   the color for those fixed links and for any that remain disabled.
+   ================================================================ */
+
+.breadcrumb li:not(.is-active) > a:not(.is-disabled) { color: #4063d8; }
+.breadcrumb li:not(.is-active) > a:not(.is-disabled):hover { color: #092ca1; }
+.breadcrumb a.is-disabled { color: #4063d8; opacity: 0.7; }
+
+html.theme--documenter-dark .breadcrumb li:not(.is-active) > a:not(.is-disabled) { color: #6d90ff; }
+html.theme--documenter-dark .breadcrumb li:not(.is-active) > a:not(.is-disabled):hover { color: #a9bcff; }
+html.theme--documenter-dark .breadcrumb a.is-disabled { color: #6d90ff; opacity: 0.7; }

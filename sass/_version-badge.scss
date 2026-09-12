@@ -1,0 +1,36 @@
+/* ================================================================
+   Version badge
+   Injected by page-toc.js after .docs-package-name.
+   Two-tone pill: dark-gray "docs" label + brand-purple version.
+   ================================================================ */
+
+.qr-version-badge {
+    display: inline-flex;   /* shrink-wraps to content, ignores flex-column stretch */
+    align-self: center;     /* centres within the sidebar flex column */
+    align-items: stretch;
+    margin: 0.3rem 0 0.1rem;
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    text-decoration: none;
+}
+
+.qr-badge-left,
+.qr-badge-right {
+    /* !important guards against docs-autofit JS zeroing sidebar font-sizes */
+    font-size: 0.6875rem !important;
+    line-height: 1.4 !important;
+    color: #fff !important;
+    padding: 0.25rem 0.45rem;
+}
+
+.qr-badge-left  { background: #555; }
+.qr-badge-right { background: #9558b2; }
+
+/* Dark mode */
+html.theme--documenter-dark .qr-badge-left  { background: #444; }
+html.theme--documenter-dark .qr-badge-right { background: #b070d0; }

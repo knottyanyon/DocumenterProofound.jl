@@ -1,0 +1,8 @@
+/* ── Bibliography labels ────────────────────────────────────────────────────
+   Style the [Author, Year] <dt> labels in the definition-list bibliography
+   produced by the authoryear_brackets citation style.                       */
+.citation dl dt {
+    font-weight: 700;
+    font-style: italic;
+}
+

@@ -1,0 +1,19 @@
+name = "DocumenterProofound"
+uuid = "4c694f12-a91f-464a-9e7e-b63c4e97dd98"
+authors = ["knottyanyon"]
+version = "0.1.0"
+
+[deps]
+DocumenterGlossip = "d2b931d4-abbd-456c-a907-c3513416760c"
+
+[sources]
+DocumenterGlossip = {path = "../DocumenterGlossip.jl"}
+
+[compat]
+julia = "1.10"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

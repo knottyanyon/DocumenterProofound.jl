@@ -1,0 +1,17 @@
+// DocumenterProofound theme — layered on top of Documenter's default theme
+// (loaded alongside documenter-light/dark.css as an extra asset, not a
+// replacement). Each partial below is a straight port of one section of
+// Qritical.jl's original custom.css.
+@charset "UTF-8";
+
+@import "admonitions";
+@import "math-envs";
+@import "misc";
+@import "output-cells";
+@import "brand-and-breadcrumbs";
+@import "toc";
+@import "version-badge";
+@import "tutorial-cards";
+@import "bibliography";
+@import "page-info";
+@import "tn-repr";
