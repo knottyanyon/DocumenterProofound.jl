@@ -7,7 +7,7 @@ version = "0.1.0"
 DocumenterGlossip = "d2b931d4-abbd-456c-a907-c3513416760c"
 
 [sources]
-DocumenterGlossip = {path = "../DocumenterGlossip.jl"}
+DocumenterGlossip = {url = "https://github.com/knottyanyon/DocumenterGlossip.jl", rev = "main"}
 
 [compat]
 julia = "1.10"
